@@ -29,7 +29,7 @@
       <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
     {{ else }}
     {{- if eq site.Language.Lang "zh" -}}
-      {{ index site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+      {{ .Lastmod.Year }} 年 {{ index site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日
     {{- else if eq site.Language.Lang "es" -}}
       {{ index site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
     {{- else if eq site.Language.Lang "pt" -}}
@@ -45,8 +45,6 @@
     {{ .Summary | emojify | safeHTML }}
 
     <div class="card-actions justify-between items-center mt-4">
-      {{ partial "author.html" (dict "Params" .Params "template" "summary") }}
-
       <div class="inline-flex items-center">
         <ion-icon name="time" class="mr-1"></ion-icon>
         <span>{{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}</span>

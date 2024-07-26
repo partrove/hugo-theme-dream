@@ -1,12 +1,7 @@
 <div>
-  {{ if site.Params.siteStartYear }}
   <p>
-    © {{ if eq now.Year site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ site.Params.siteStartYear }} - {{
-    now.Year }}{{ end }} {{ site.Title }}
+    {{ site.Title }} © <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
   </p>
-  {{ else }}
-  <p>© {{ now.Year }} {{ site.Title }}</p>
-  {{ end }}
 
   {{ if site.Params.footerBottomText }}
   <p>{{ site.Params.footerBottomText | safeHTML }}</p>

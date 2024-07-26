@@ -37,6 +37,9 @@ other = "社交链接"
 [minuteRead]
 other = " 分钟阅读"
 
+[postAt]
+other = "发布于"
+
 [updateAt]
 other = "更新于"
 
